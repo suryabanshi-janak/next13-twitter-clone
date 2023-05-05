@@ -1,11 +1,12 @@
-import { useRouter } from 'next/router';
 import { FaFeather } from 'react-icons/fa';
 
+import useLoginModal from '@/hooks/useLoginModal';
+
 const SidebarTweetButton = () => {
-  const router = useRouter();
+  const loginModal = useLoginModal();
 
   return (
-    <div onClick={() => router.push('/')}>
+    <div onClick={() => loginModal.onOpen()}>
       {/* small screen */}
       <div className='flex items-center justify-center p-4 mt-6 transition rounded-full cursor-pointer lg:hidden h-14 w-14 bg-sky-500 hover:bg-opacity-80'>
         <FaFeather size={24} color='white' />
