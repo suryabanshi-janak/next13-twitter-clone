@@ -35,7 +35,7 @@ export default async function handler(
       if (userId && typeof userId === 'string') {
         posts = await prisma.post.findMany({
           where: {
-            id: userId,
+            userId,
           },
           include: {
             user: true,
